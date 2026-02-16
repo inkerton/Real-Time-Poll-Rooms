@@ -1,5 +1,6 @@
 "use client"
 
+import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import Pusher from "pusher-js"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
@@ -24,9 +25,14 @@ export default function PollClient({ poll }: PollProps) {
   if (!poll) {
     return <div>Loading...</div>
   }
+  const router = useRouter()
 
   const [options, setOptions] = useState<PollOption[]>(poll.options || [])
   const [selected, setSelected] = useState<string | null>(null)
+
+  useEffect(() => {
+  setOptions(poll.options)
+}, [poll])
 
   const totalVotes = options.reduce((acc, o) => acc + o.voteCount, 0)
 
@@ -50,6 +56,7 @@ export default function PollClient({ poll }: PollProps) {
 
     if (res.ok) {
       document.cookie = `voted_${poll.id}=true; path=/; max-age=31536000`
+      router.refresh() 
     }
   }
 

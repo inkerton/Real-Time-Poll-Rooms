@@ -50,11 +50,6 @@ const data = {
       url: "/create",
       icon: Frame,
     },
-    {
-      name: "LinkedIN",
-      url: "#",
-      icon: Map,
-    },
   ],
 }
 
