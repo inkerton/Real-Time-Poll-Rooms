@@ -19,7 +19,7 @@ This project was developed as a technical assessment for a Full-Stack Internship
 
 ## 🚀 Live Demo & Repository
 
-* **Live URL:** [Insert your Vercel Link here]
+* **Live URL:** [[Vercel Link here](https://real-time-poll-rooms-xtyu.vercel.app/)]
 * **GitHub:** [Insert your Repo Link here]
 
 ---
